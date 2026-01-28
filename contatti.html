@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contatti Tech Base - Contattaci per domande, suggerimenti e collaborazioni su articoli tech, guide tecnologia e blog innovativo. Supporto veloce 24/7.">
+    <meta name="keywords" content="contatti, supporto tech, domande tecnologia, collaborazioni blog, contatti blog tech, email supporto">
+    <meta name="author" content="Tech Base">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Contatti - Tech Base Blog Tecnologia">
+    <meta property="og:description" content="Contattaci per qualsiasi domanda, suggerimento o proposta di collaborazione. Team disponibile 24/7.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.techbase.it/contatti.html">
+    
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Tech Base",
+      "description": "Blog di tecnologia con articoli su Samsung, software, privacy e innovazione",
+      "url": "https://www.techbase.it/",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+39-XXX-XXXXXXX",
+        "contactType": "Customer Service",
+        "email": "info@techbase.it",
+        "availableLanguage": "it"
+      },
+      "sameAs": [
+        "https://www.youtube.com/techbase",
+        "https://twitter.com/techbase",
+        "https://www.instagram.com/techbase"
+      ]
+    }
+    </script>
+    
+    <title>Contatti Tech Base - Domande e Collaborazioni Blog Tecnologia 2026</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="canonical" href="https://www.techbase.it/contatti.html">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="background-animation">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <div class="logo-icon">⚡</div>
+                <div>
+                    <h1>Tech Base</h1>
+                    <p class="tagline">Innovazione & Tecnologia</p>
+                </div>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="index.html#about">Chi Siamo</a></li>
+                    <li><a href="contatti.html" class="active">Contatti</a></li>
+                </ul>
+            </nav>
+            <button class="search-toggle" id="searchToggle" title="Cerca articoli">
+                <i class="fas fa-search"></i>
+            </button>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Search Modal -->
+    <div class="search-modal" id="searchModal">
+        <div class="search-modal-content">
+            <button class="search-modal-close" id="searchModalClose">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="search-modal-header">
+                <h2>Cerca Articoli</h2>
+                <p>Trova gli articoli che ti interessano</p>
+            </div>
+            <div class="search-box-modal">
+                <i class="fas fa-search"></i>
+                <input type="text" id="searchInputModal" class="search-input-modal" placeholder="Cerca per titolo, categoria, parola chiave...">
+                <button class="search-clear-modal" id="searchClearModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="search-tags-modal">
+                <button class="search-tag-modal" data-tag="smartphone">📱 Smartphone</button>
+                <button class="search-tag-modal" data-tag="privacy">🔒 Privacy</button>
+                <button class="search-tag-modal" data-tag="software">📱 Software</button>
+                <button class="search-tag-modal" data-tag="compatibilità">✅ Compatibilità</button>
+                <button class="search-tag-modal" data-tag="security">🔐 Security</button>
+                <button class="search-tag-modal" data-tag="ai">🤖 AI</button>
+            </div>
+            <div id="searchResultsModal" class="search-results-modal"></div>
+        </div>
+    </div>
+    <div class="search-modal-overlay" id="searchModalOverlay"></div>
+
+    <!-- Contact Header Section -->
+    <section class="contact-header-section">
+        <div class="container">
+            <div class="contact-header-content">
+                <h1>✉️ Contattaci</h1>
+                <p>Hai domande, suggerimenti o proposte di collaborazione? Siamo qui per ascoltarti!</p>
+                <a href="index.html" class="back-to-home">
+                    <i class="fas fa-arrow-left"></i> Torna alla Home
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact contact-page">
+        <div class="container">
+            <div class="contact-wrapper">
+                <div class="contact-content">
+                    <form class="contact-form">
+                        <div class="form-group">
+                            <label for="name"><i class="fas fa-user"></i> Nome</label>
+                            <input type="text" id="name" name="name" placeholder="Il tuo nome" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email"><i class="fas fa-envelope"></i> Email</label>
+                            <input type="email" id="email" name="email" placeholder="La tua email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject"><i class="fas fa-heading"></i> Oggetto</label>
+                            <input type="text" id="subject" name="subject" placeholder="Oggetto del messaggio" required>
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="message"><i class="fas fa-message"></i> Messaggio</label>
+                            <textarea id="message" name="message" rows="8" placeholder="Scrivi il tuo messaggio..." required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn"><span>Invia Messaggio</span><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                    <div class="contact-info">
+                        <div class="info-item">
+                            <div class="info-icon">📧</div>
+                            <h4>Email</h4>
+                            <p><a href="mailto:info@techbase.it">info@techbase.it</a></p>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon">📺</div>
+                            <h4>YouTube</h4>
+                            <p><a href="https://youtube.com" target="_blank">@TechBase</a></p>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon">🌐</div>
+                            <h4>Website</h4>
+                            <p><a href="index.html">www.techbase.it</a></p>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon">💬</div>
+                            <h4>Social Media</h4>
+                            <p>Seguici sui nostri canali social</p>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon">⏰</div>
+                            <h4>Orari</h4>
+                            <p>Disponibili 24/7 per supporto via email</p>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon">🌍</div>
+                            <h4>Supporto</h4>
+                            <p>Risposta entro 24 ore</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Tech Base</h4>
+                    <p>Il tuo hub di risorse per la tecnologia</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Link Utili</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="index.html#about">Chi Siamo</a></li>
+                        <li><a href="contatti.html">Contatti</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Seguici</h4>
+                    <div class="social-links">
+                        <a href="https://youtube.com" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="https://twitter.com" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://instagram.com" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://github.com" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Tech Base. Tutti i diritti riservati. | Creato con ❤️ per gli amanti della tecnologia</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

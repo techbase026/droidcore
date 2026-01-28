@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tech Base - Blog di tecnologia con articoli su Samsung Galaxy S26, One UI 8.5, privacy display e novità tech. Scopri guide, tutorial e approfondimenti su smartphone, software e innovazione tecnologica.">
+    <meta name="keywords" content="blog tecnologia, Samsung Galaxy S26, One UI 8.5, smartphone, privacy display, tutorial tech, guide tecnologia, news tecnologia, AI, programmazione">
+    <meta name="author" content="Tech Base">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Tech Base - Blog di Tecnologia e Innovazione 2026">
+    <meta property="og:description" content="Il tuo hub per notizie, articoli e guide sulla tecnologia più recente. Scopri Samsung Galaxy S26, One UI 8.5 e molto altro.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.techbase.it/">
+    <meta property="og:image" content="https://www.techbase.it/Samsung-Galaxy-S26-Ultra.webp">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Tech Base - Blog di Tecnologia 2026">
+    <meta name="twitter:description" content="Scopri le ultime novità su tecnologia, smartphone e innovazione digitale">
+    <title>Tech Base - Blog Tecnologia 2026 | Articoli su Samsung S26, One UI e Novità Tech</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="canonical" href="https://www.techbase.it/">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="background-animation">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <div class="logo-icon"><img src="channels4_profile.jpg" alt=""></div>
+                <div>
+                    <h1>Tech Base</h1>
+                    <p class="tagline">Innovazione & Tecnologia</p>
+                </div>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="#about">Chi Siamo</a></li>
+                    <li><a href="contatti.html">Contatti</a></li>
+                </ul>
+            </nav>
+            <button class="search-toggle" id="searchToggle" title="Cerca articoli">
+                <i class="fas fa-search"></i>
+            </button>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Search Modal -->
+    <div class="search-modal" id="searchModal">
+        <div class="search-modal-content">
+            <button class="search-modal-close" id="searchModalClose">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="search-modal-header">
+                <h2>Cerca Articoli</h2>
+                <p>Trova gli articoli che ti interessano</p>
+            </div>
+            <div class="search-box-modal">
+                <i class="fas fa-search"></i>
+                <input type="text" id="searchInputModal" class="search-input-modal" placeholder="Cerca per titolo, categoria, parola chiave...">
+                <button class="search-clear-modal" id="searchClearModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="search-tags-modal">
+                <button class="search-tag-modal" data-tag="smartphone">📱 Smartphone</button>
+                <button class="search-tag-modal" data-tag="privacy">🔒 Privacy</button>
+                <button class="search-tag-modal" data-tag="software">📱 Software</button>
+                <button class="search-tag-modal" data-tag="compatibilità">✅ Compatibilità</button>
+                <button class="search-tag-modal" data-tag="security">🔐 Security</button>
+                <button class="search-tag-modal" data-tag="ai">🤖 AI</button>
+            </div>
+            <div id="searchResultsModal" class="search-results-modal"></div>
+        </div>
+    </div>
+    <div class="search-modal-overlay" id="searchModalOverlay"></div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="container">
+                <h2 class="hero-title">Scopri il Futuro della Tecnologia 2026</h2>
+                <p class="hero-subtitle">Blog tecnologico con articoli esclusivi su Samsung Galaxy S26, One UI 8.5, innovazione AI e le ultime notizie tech. Leggi guide, tutorial e approfondimenti per restare sempre aggiornato.</p>
+                <a href="blog.html" class="cta-btn primary-btn">
+                    <span>Esplora i Contenuti</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+        <div class="floating-cards">
+            <div class="float-card">HTML</div>
+            <div class="float-card">CSS</div>
+            <div class="float-card">JS</div>
+            <div class="float-card">AI</div>
+            <div class="float-card">Python</div>
+        </div>
+    </section>
+
+    <!-- Featured Blog Posts Section -->
+    <section class="blog" id="blog">
+        <div class="container">
+            <div class="section-header">
+                <h2>📚 Articoli in Evidenza</h2>
+                <p>I nostri articoli più importanti del momento</p>
+            </div>
+            <div class="blog-grid" id="blogGrid">
+                <!-- Post 1 -->
+                <article class="blog-post">
+                    <div class="post-badge">📱 Smartphone</div>
+                    <img src="Samsung-Galaxy-S26-Ultra.webp" alt="Samsung Galaxy S26" class="post-image-img">
+                    <div class="post-content">
+                        <h3>Samsung Galaxy S26 2026: Rivoluzione Tecnologica e Specifiche Complete</h3>
+                        <p class="post-date"><i class="fas fa-calendar"></i> 28 Gennaio 2026</p>
+                        <p>Scopri tutte le novità e i leak esclusivi sul Samsung Galaxy S26: chip Snapdragon 8 Gen 4, fotocamera da 200MP, display AMOLED 2K, batteria 6500mAh e la rivoluzionaria One UI 7. Analisi approfondita delle specifiche tecniche più attese dell'anno!</p>
+                        <a href="post1-samsung-s26.html" class="read-more"><span>Leggi Articolo</span><i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <!-- Post 2 -->
+                <article class="blog-post">
+                    <div class="post-badge">📱 Software</div>
+                    <img src="1293707.webp" alt="Samsung One UI 8.5" class="post-image-img">
+                    <div class="post-content">
+                        <h3>Samsung One UI 8.5 2026: Novità, Features AI e Compatibilità Completa</h3>
+                        <p class="post-date"><i class="fas fa-calendar"></i> 26 Gennaio 2026</p>
+                        <p>Scopri One UI 8.5, l'evoluzione tecnologica dell'interfaccia Samsung con AI generativa avanzata, nuove funzionalità esclusive, performance ottimizzate e integrazione completa con i Galaxy S26. La rivoluzione dell'esperienza utente Samsung.</p>
+                        <a href="post3-samsung-oneui8.html" class="read-more"><span>Leggi Articolo</span><i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+            </div>
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="blog.html" class="cta-btn primary-btn">
+                    <span>Scopri Tutti i 50+ Articoli Blog</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trending Section -->
+    <section class="trending-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>🔥 Articoli Trending Questa Settimana</h2>
+                <p>Le notizie tech più calde e condivise del momento</p>
+            </div>
+            <div class="trending-grid">
+                <div class="trending-card">
+                    <div class="trending-badge">Trending #1</div>
+                    <div class="trending-header">
+                        <span class="trending-category">📱 Smartphone</span>
+                        <span class="trending-views">👁️ 15.2K</span>
+                    </div>
+                    <h3>Samsung Galaxy S26: Leak Esclusivi e Rumors 2026</h3>
+                    <p>Scopri i leak più recenti sul Samsung Galaxy S26 con specifiche tecniche complete, design innovativo e features esclusive che rivoluzoneranno il mercato smartphone.</p>
+                    <div class="trending-footer">
+                        <span class="trending-time">2 ore fa</span>
+                        <a href="blog.html" class="trending-link">Leggi <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="trending-card">
+                    <div class="trending-badge">Trending #2</div>
+                    <div class="trending-header">
+                        <span class="trending-category">🤖 AI Tech</span>
+                        <span class="trending-views">👁️ 12.8K</span>
+                    </div>
+                    <h3>One UI 8.5: La Rivoluzione AI di Samsung 2026</h3>
+                    <p>Scopri come One UI 8.5 integra AI generativa avanzata, nuove funzionalità e miglioramenti di performance che trasformano l'esperienza utente Samsung.</p>
+                    <div class="trending-footer">
+                        <span class="trending-time">4 ore fa</span>
+                        <a href="blog.html" class="trending-link">Leggi <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="trending-card">
+                    <div class="trending-badge">Trending #3</div>
+                    <div class="trending-header">
+                        <span class="trending-category">🔒 Privacy</span>
+                        <span class="trending-views">👁️ 9.5K</span>
+                    </div>
+                    <h3>Privacy Display Samsung: Protezione Dati Totale</h3>
+                    <p>La nuova tecnologia Privacy Display di Samsung offre protezione totale della privacy con schermo che nasconde il contenuto dagli sguardi indiscreti.</p>
+                    <div class="trending-footer">
+                        <span class="trending-time">8 ore fa</span>
+                        <a href="blog.html" class="trending-link">Leggi <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter" id="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <div class="newsletter-text">
+                    <h2>📬 Rimani Aggiornato sulle Ultime Novità Tech</h2>
+                    <p>Iscriviti alla nostra newsletter esclusiva e ricevi gli articoli più interessanti direttamente nella tua inbox. Solo notizie rilevanti, nessuno spam!</p>
+                    <div class="newsletter-stats">
+                        <div class="newsletter-stat">
+                            <span class="stat-number">5000+</span>
+                            <span class="stat-label">Iscritti</span>
+                        </div>
+                        <div class="newsletter-stat">
+                            <span class="stat-number">50+</span>
+                            <span class="stat-label">Articoli</span>
+                        </div>
+                        <div class="newsletter-stat">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Gratis</span>
+                        </div>
+                    </div>
+                </div>
+                <form class="newsletter-form">
+                    <input type="email" id="newsletter-email" placeholder="La tua email" required>
+                    <button type="submit" class="submit-btn"><span>Iscriviti</span><i class="fas fa-envelope"></i></button>
+                    <p class="newsletter-disclaimer">Rispettiamo la tua privacy. Nessuno spam, mai.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>📖 Chi Siamo</h2>
+                    <p>Tech Base è un canale YouTube dedicato alla divulgazione della tecnologia. Pubblichiamo tutorial, guide e approfondimenti su programmazione, sviluppo web, cybersecurity e molto altro.</p>
+                    <p>La nostra missione è rendere la tecnologia accessibile a tutti, indipendentemente dal livello di esperienza.</p>
+                    <a href="#" class="cta-btn secondary-btn">Visita il Canale YouTube <i class="fab fa-youtube"></i></a>
+                </div>
+                <div class="stats">
+                    <div class="stat-card">
+                        <div class="stat-icon">👥</div>
+                        <h3>+10</h3>
+                        <p>Iscritti</p>
+                        <div class="stat-bar"><div class="stat-fill" style="width: 85%;"></div></div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">🎬</div>
+                        <h3>5+</h3>
+                        <p>Video</p>
+                        <div class="stat-bar"><div class="stat-fill" style="width: 70%;"></div></div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">💯</div>
+                        <h3>100%</h3>
+                        <p>Gratuito</p>
+                        <div class="stat-bar"><div class="stat-fill" style="width: 100%;"></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Tech Base</h4>
+                    <p>Il tuo hub di risorse per la tecnologia, innovazione e guide pratiche. Scopri le ultime novità su smartphone, software e soluzioni tech.</p>
+                    <p class="footer-keywords">
+                        <small>Samsung • Android • One UI • Smartphone • AI • Tecnologia • Privacy • Security • Novità Tech • 2026</small>
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h4>Categorie Articoli</h4>
+                    <ul>
+                        <li><a href="blog.html">📱 Smartphone</a></li>
+                        <li><a href="blog.html">📱 Software</a></li>
+                        <li><a href="blog.html">🔒 Privacy & Security</a></li>
+                        <li><a href="blog.html">✅ Compatibilità</a></li>
+                        <li><a href="blog.html">🤖 AI & Machine Learning</a></li>
+                        <li><a href="blog.html">🔐 Cybersecurity</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Link Utili</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="blog.html">Blog Completo</a></li>
+                        <li><a href="index.html#about">Chi Siamo</a></li>
+                        <li><a href="contatti.html">Contatti</a></li>
+                        <li><a href="index.html#newsletter">Newsletter</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Seguici</h4>
+                    <div class="social-links">
+                        <a href="https://youtube.com" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="https://twitter.com" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://instagram.com" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://github.com" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Tech Base. Tutti i diritti riservati. | Creato con ❤️ per gli amanti della tecnologia | <a href="#" title="Privacy Policy">Privacy Policy</a> | <a href="#" title="Termini di Servizio">Termini di Servizio</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
