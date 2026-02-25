@@ -3018,3 +3018,20 @@ body {
 .header-login-btn { text-decoration: none; padding: 8px 14px; border-radius: 999px; font-weight: 700; font-size: 14px; color: #fff; background: linear-gradient(135deg, #0080FF 0%, #0050CC 100%); border: 1px solid rgba(255,255,255,0.24); box-shadow: 0 8px 18px rgba(0,128,255,0.24); }
 .header-login-btn:hover { transform: translateY(-1px); box-shadow: 0 12px 24px rgba(0,128,255,0.3); }
 @media (max-width: 768px) { .header-actions { margin-left: 0; } .header-login-btn { padding: 7px 12px; font-size: 13px; } }
+
+/* Keep DroidCore logo fixed on the left */
+.header .container { justify-content: flex-start; }
+.logo { flex: 0 0 auto; margin-right: 24px; }
+.nav { margin-right: 0; }
+.header-actions { margin-left: auto; }
+
+/* Logo at extreme left */
+.header .container { padding-left: 0; }
+
+/* Center nav menu in header */
+.header .container { display: grid; grid-template-columns: auto 1fr auto auto; align-items: center; column-gap: 18px; }
+.nav { justify-self: center; }
+.nav ul { justify-content: center; }
+.logo { justify-self: start; }
+.header-actions { justify-self: end; margin-left: 0; }
+.hamburger { justify-self: end; }
