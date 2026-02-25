@@ -1,0 +1,198 @@
+﻿<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Comparatore AI locale DroidCore: confronta smartphone in base a budget e priorita senza backend.">
+    <title>Comparatore AI | DroidCore</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="background-animation">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <div class="logo-icon"><img loading="lazy" src="channels4_profile.jpg" alt="Logo DroidCore"></div>
+                <div>
+                    <h1>DroidCore</h1>
+                    <p class="tagline">Innovazione & Tecnologia</p>
+                </div>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="comparatore.html" class="active">Comparatore AI</a></li>
+                    <li><a href="chi-siamo.html">Chi Siamo</a></li>
+                    <li><a href="canale.html">Canale</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">`r`n            <button class="search-toggle" id="searchToggle" title="Cerca articoli">
+                <i class="fas fa-search"></i>
+            </button>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <section class="comparator-hero">
+        <div class="container">
+            <div class="comparator-hero-content">
+                <div class="comparator-hero-badges">
+                    <span class="channel-pill"><i class="fas fa-brain"></i> AI Fuzzy Logic</span>
+                    <span class="channel-pill"><i class="fas fa-shield-alt"></i> 100% Locale</span>
+                </div>
+                <h1>Comparatore Smartphone AI</h1>
+                <p>Il motore AI locale analizza priorita, budget e stile d'uso per consigliarti lo smartphone piu adatto. Nessun dato viene inviato a server esterni.</p>
+                <div class="comparator-hero-stats">
+                    <div class="comparator-stat"><i class="fas fa-mobile-alt"></i><span><strong>5</strong> Smartphone</span></div>
+                    <div class="comparator-stat"><i class="fas fa-calculator"></i><span><strong>Fuzzy</strong> Logic</span></div>
+                    <div class="comparator-stat"><i class="fas fa-infinity"></i><span><strong>Gratis</strong></span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="comparator-section">
+        <div class="container comparator-layout">
+            <form id="aiComparatorForm" class="comparator-form">
+                <div class="comparator-form-header">
+                    <i class="fas fa-sliders-h"></i>
+                    <h2>Configura il tuo profilo</h2>
+                </div>
+
+                <div class="comparator-form-group">
+                    <label for="budget"><i class="fas fa-wallet"></i> Budget massimo</label>
+                    <select id="budget" name="budget">
+                        <option value="200">EUR Base Level (fino a 200)</option>
+                        <option value="450">EUR Entry Level (fino a 450)</option>
+                        <option value="650" selected>EUR Mid-Range (fino a 650)</option>
+                        <option value="850">EUR Upper-Mid (fino a 850)</option>
+                        <option value="1300">EUR Premium (fino a 1300)</option>
+                    </select>
+                </div>
+
+                <div class="comparator-form-group">
+                    <label for="priority"><i class="fas fa-star"></i> Priorita principale</label>
+                    <select id="priority" name="priority">
+                        <option value="balanced" selected>Bilanciato</option>
+                        <option value="camera">Fotocamera</option>
+                        <option value="battery">Batteria</option>
+                        <option value="performance">Prestazioni</option>
+                        <option value="display">Display</option>
+                    </select>
+                </div>
+
+                <div class="comparator-form-group">
+                    <label for="usage"><i class="fas fa-user"></i> Uso principale</label>
+                    <select id="usage" name="usage">
+                        <option value="daily" selected>Uso quotidiano</option>
+                        <option value="gaming">Gaming</option>
+                        <option value="creator">Foto/Video creator</option>
+                        <option value="work">Lavoro</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="submit-btn comparator-btn">
+                    <span><i class="fas fa-robot"></i> Analizza con AI</span>
+                    <i class="fas fa-wand-magic-sparkles"></i>
+                </button>
+
+                <div class="comparator-note">
+                    <i class="fas fa-info-circle"></i>
+                    <p>Il sistema usa logica fuzzy per pesare automaticamente le caratteristiche in base alle tue preferenze. I punteggi sono stime basate su specifiche tecniche.</p>
+                </div>
+            </form>
+
+            <div class="comparator-results">
+                <div id="aiSummary" class="comparator-summary">
+                    <div class="comparator-waiting">
+                        <i class="fas fa-lightbulb"></i>
+                        <h3>Pronto per l'analisi AI</h3>
+                        <p>Seleziona le tue preferenze e premi "Analizza con AI" per ricevere un consiglio personalizzato.</p>
+                    </div>
+                </div>
+                <div id="aiRanking" class="comparator-ranking"></div>
+
+                <div class="ai-assistant" id="aiAssistantLocal">
+                    <h3><i class="fas fa-comment-dots"></i> AI Advisor locale</h3>
+                    <p>Fai una domanda rapida (senza API key): esempio "Meglio per gaming sotto 700?"</p>
+                    <div class="ai-assistant-row">
+                        <input id="aiAssistantInput" class="ai-assistant-input" type="text" placeholder="Scrivi qui la tua domanda...">
+                        <button id="aiAssistantAsk" class="ai-assistant-btn" type="button">Chiedi</button>
+                    </div>
+                    <div id="aiAssistantAnswer" class="ai-assistant-answer">Ti rispondo in base ai dati locali del comparatore.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="comparator-features">
+        <div class="container">
+            <div class="comparator-features-grid">
+                <div class="comparator-feature-card">
+                    <div class="comparator-feature-icon"><i class="fas fa-fingerprint"></i></div>
+                    <h3>Personalizzato</h3>
+                    <p>L'algoritmo adatta i risultati al tuo profilo specifico.</p>
+                </div>
+                <div class="comparator-feature-card">
+                    <div class="comparator-feature-icon"><i class="fas fa-bolt"></i></div>
+                    <h3>Istantaneo</h3>
+                    <p>Risultati immediati direttamente nel browser.</p>
+                </div>
+                <div class="comparator-feature-card">
+                    <div class="comparator-feature-icon"><i class="fas fa-lock"></i></div>
+                    <h3>Privato</h3>
+                    <p>Nessun dato viene trasmesso, tutto resta locale.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>DroidCore</h4>
+                    <p>Comparazioni pratiche e guide per scegliere il device giusto.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Link Utili</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="chi-siamo.html">Chi Siamo</a></li>
+                        <li><a href="canale.html">Canale</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Seguici</h4>
+                    <div class="social-links">
+                        <a href="https://www.youtube.com/@droidcore-e4b" target="_blank" rel="noopener noreferrer" title="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://github.com" target="_blank" rel="noopener noreferrer" title="GitHub"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 DroidCore. Tutti i diritti riservati.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+</body>
+</html>
+
+
+
+

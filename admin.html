@@ -1,0 +1,137 @@
+﻿<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Staff - DroidCore</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-header">
+            <div class="staff-badge">
+                <i class="fas fa-shield-alt"></i>
+                Area Staff
+            </div>
+            <div class="logo-icon">⚡</div>
+            <h1>DroidCore</h1>
+            <p>Accedi alla dashboard per pubblicare articoli</p>
+        </div>
+
+        <div class="login-body">
+            <div id="alert" class="alert"></div>
+
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <div class="input-wrapper">
+                        <input type="text" id="username" name="username" placeholder="Inserisci il tuo username" required autocomplete="username">
+                        <i class="fas fa-user"></i>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <div class="input-wrapper">
+                        <input type="password" id="password" name="password" placeholder="Inserisci la tua password" required autocomplete="current-password">
+                        <i class="fas fa-lock"></i>
+                        <button type="button" class="password-toggle" onclick="togglePassword()">
+                            <i class="fas fa-eye" id="eyeIcon"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-login">
+                    <i class="fas fa-sign-in-alt"></i>
+                    Accedi
+                </button>
+            </form>
+        </div>
+
+        <div class="login-footer">
+            <p><i class="fas fa-info-circle"></i> Accesso riservato allo staff autorizzato</p>
+        </div>
+    </div>
+
+    <script>
+        // Configurazione utenti staff (in locale - modificare per produzione)
+        const STAFF_USERS = {
+            'admin': 'droidcore2026',
+            'editor': 'editor2026',
+            'staff': 'techbase2026'
+        };
+
+        function togglePassword() {
+            const passwordInput = document.getElementById('password');
+            const eyeIcon = document.getElementById('eyeIcon');
+            
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                eyeIcon.classList.remove('fa-eye');
+                eyeIcon.classList.add('fa-eye-slash');
+            } else {
+                passwordInput.type = 'password';
+                eyeIcon.classList.remove('fa-eye-slash');
+                eyeIcon.classList.add('fa-eye');
+            }
+        }
+
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const username = document.getElementById('username').value.trim();
+            const password = document.getElementById('password').value;
+            const alert = document.getElementById('alert');
+            
+            // Verifica credenziali
+            if (STAFF_USERS[username] && STAFF_USERS[username] === password) {
+                // Salva sessione
+                const session = {
+                    user: username,
+                    loginTime: new Date().toISOString(),
+                    token: btoa(username + ':' + Date.now())
+                };
+                localStorage.setItem('staffSession', JSON.stringify(session));
+                
+                alert.className = 'alert success';
+                alert.textContent = '✓ Accesso effettuato! Reindirizzamento...';
+                alert.style.display = 'block';
+                
+                setTimeout(() => {
+                    window.location.href = 'dashboard.html';
+                }, 1000);
+            } else {
+                alert.className = 'alert error';
+                alert.textContent = '✗ Username o password non corretti. Riprova.';
+                alert.style.display = 'block';
+                
+                // Shake effect
+                document.querySelector('.login-container').style.animation = 'none';
+                setTimeout(() => {
+                    document.querySelector('.login-container').style.animation = 'slideUp 0.6s ease-out';
+                }, 10);
+            }
+        });
+
+        // Verifica se già loggato
+        window.addEventListener('DOMContentLoaded', function() {
+            const session = localStorage.getItem('staffSession');
+            if (session) {
+                try {
+                    const sessionData = JSON.parse(session);
+                    if (sessionData.user && sessionData.token) {
+                        window.location.href = 'dashboard.html';
+                    }
+                } catch (e) {
+                    localStorage.removeItem('staffSession');
+                }
+            }
+        });
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,512 @@
+﻿<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Staff - DroidCore</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="staff-dashboard-page">
+    <aside class="sidebar">
+        <div class="sidebar-logo">
+            <div class="logo-icon">⚡</div>
+            <div>
+                <h2>DroidCore</h2>
+                <span>Staff Panel</span>
+            </div>
+        </div>
+
+        <ul class="sidebar-menu">
+            <li>
+                <a href="#" class="active" onclick="showSection('new', this); return false;">
+                    <i class="fas fa-plus-circle"></i>
+                    Nuovo Articolo
+                </a>
+            </li>
+            <li>
+                <a href="#posts" onclick="showSection('posts', this); return false;">
+                    <i class="fas fa-list"></i>
+                    Articoli Pubblicati
+                </a>
+            </li>
+            <li>
+                <a href="index.html" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-external-link-alt"></i>
+                    Visualizza Sito
+                </a>
+            </li>
+            <li>
+                <a href="blog.html" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-blog"></i>
+                    Blog
+                </a>
+            </li>
+        </ul>
+
+        <div class="sidebar-footer">
+            <div class="user-info">
+                <div class="user-avatar" id="userAvatar">A</div>
+                <div class="user-details">
+                    <span class="name" id="userName">Admin</span>
+                    <span class="role">Staff Member</span>
+                </div>
+            </div>
+            <button class="btn-logout" onclick="logout()">
+                <i class="fas fa-sign-out-alt"></i>
+                Esci
+            </button>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <div class="page-header">
+            <div>
+                <h1 id="pageTitle">✍️ Nuovo Articolo</h1>
+                <p class="date" id="currentDate"></p>
+            </div>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon blue">
+                    <i class="fas fa-file-alt"></i>
+                </div>
+                <div class="stat-info">
+                    <h3 id="totalPosts">0</h3>
+                    <p>Articoli Totali</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon green">
+                    <i class="fas fa-calendar-check"></i>
+                </div>
+                <div class="stat-info">
+                    <h3 id="thisMonthPosts">0</h3>
+                    <p>Questo Mese</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon orange">
+                    <i class="fas fa-globe"></i>
+                </div>
+                <div class="stat-info">
+                    <h3 id="publishedPosts">0</h3>
+                    <p>Pubblicati sul Sito</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="alert" class="alert" role="status" aria-live="polite"></div>
+
+        <div class="dashboard-card" id="newPostSection">
+            <div class="card-header">
+                <i class="fas fa-pen-fancy"></i>
+                <h2>Crea Nuovo Articolo</h2>
+            </div>
+            <div class="card-body">
+                <form id="postForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="postTitle">Titolo Articolo <span class="required">*</span></label>
+                            <input type="text" id="postTitle" placeholder="Es: Samsung Galaxy S26: Tutte le Novità" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="postCategory">Categoria <span class="required">*</span></label>
+                            <select id="postCategory" required>
+                                <option value="">Seleziona categoria...</option>
+                                <option value="📱 Smartphone">📱 Smartphone</option>
+                                <option value="📱 Software">📱 Software</option>
+                                <option value="🔒 Privacy">🔒 Privacy</option>
+                                <option value="✅ Compatibilità">✅ Compatibilità</option>
+                                <option value="🤖 AI">🤖 AI</option>
+                                <option value="💻 Tech">💻 Tech</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="postImage">Immagine di Copertina</label>
+                            <input type="text" id="postImage" placeholder="URL immagine opzionale (https://...)" inputmode="url">
+                            <input type="file" id="postImageFile" accept="image/*">
+                            <div id="postImagePreview" class="dashboard-image-preview" style="display:none;"><img id="postImagePreviewImg" alt="Anteprima copertina"></div>
+                            <p class="form-hint">Puoi caricare un file dal tuo PC oppure usare un URL</p>
+                        </div>
+                        <div class="form-group">
+                            <label for="postDate">Data Pubblicazione</label>
+                            <input type="date" id="postDate">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="postMetaDesc">Meta Description</label>
+                            <input type="text" id="postMetaDesc" placeholder="Breve descrizione per i motori di ricerca">
+                        </div>
+                        <div class="form-group">
+                            <label for="postKeywords">Parole Chiave</label>
+                            <input type="text" id="postKeywords" placeholder="Es: samsung, galaxy, smartphone, 2026">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="postIntro">Sommario (Intro) <span class="required">*</span></label>
+                        <textarea id="postIntro" placeholder="Breve introduzione dell'articolo (2-3 frasi)" rows="3" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="postContent">Contenuto Articolo (HTML) <span class="required">*</span></label>
+                        <textarea id="postContent" placeholder="Inserisci il contenuto completo in HTML..." rows="12" required></textarea>
+                        <p class="form-hint">Tag consentiti: h2, h3, p, ul, li, strong, em, a</p>
+                    </div>
+
+                    <div class="btn-group">
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-eye"></i>
+                            Anteprima
+                        </button>
+                        <button type="button" class="btn btn-success" onclick="publishPost()">
+                            <i class="fas fa-paper-plane"></i>
+                            Pubblica sul sito
+                        </button>
+                        <button type="button" class="btn" onclick="generateAndDownload()">
+                            <i class="fas fa-download"></i>
+                            Genera HTML
+                        </button>
+                    </div>
+                </form>
+
+                <div class="preview-section" id="previewSection" style="display:none;">
+                    <h3><i class="fas fa-search"></i> Anteprima Articolo</h3>
+                    <div class="preview-content" id="previewContent"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="dashboard-card" id="postsSection" style="display:none;">
+            <div class="card-header">
+                <i class="fas fa-list"></i>
+                <h2>Articoli Pubblicati</h2>
+            </div>
+            <div class="card-body">
+                <ul class="posts-list" id="postsList"></ul>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const STAFF_POSTS_KEY = 'staff_blog_posts';
+        let uploadedImageDataUrl = ''; 
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const sessionRaw = localStorage.getItem('staffSession');
+            if (!sessionRaw) {
+                window.location.href = 'admin.html';
+                return;
+            }
+
+            try {
+                const session = JSON.parse(sessionRaw);
+                document.getElementById('userName').textContent = session.user || 'Staff';
+                document.getElementById('userAvatar').textContent = (session.user || 'S').charAt(0).toUpperCase();
+            } catch {
+                localStorage.removeItem('staffSession');
+                window.location.href = 'admin.html';
+                return;
+            }
+
+            const now = new Date();
+            document.getElementById('currentDate').textContent = now.toLocaleDateString('it-IT', {
+                weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
+            });
+            document.getElementById('postDate').valueAsDate = now;
+            const imageFileInput = document.getElementById('postImageFile');
+            if (imageFileInput) imageFileInput.addEventListener('change', handleImageFileChange);
+
+            refreshDashboard();
+        });
+
+        function getStaffPosts() {
+            try {
+                const parsed = JSON.parse(localStorage.getItem(STAFF_POSTS_KEY) || '[]');
+                return Array.isArray(parsed) ? parsed : [];
+            } catch {
+                return [];
+            }
+        }
+
+        function saveStaffPosts(posts) {
+            localStorage.setItem(STAFF_POSTS_KEY, JSON.stringify(posts));
+        }
+
+        function showNotification(message, type = 'info') {
+            const alert = document.getElementById('alert');
+            alert.className = 'alert ' + type + ' show';
+            alert.textContent = message;
+            alert.style.display = 'block';
+
+            window.setTimeout(() => {
+                alert.className = 'alert';
+                alert.style.display = 'none';
+            }, 3200);
+        }
+
+        function showSection(section, anchor) {
+            const newPostSection = document.getElementById('newPostSection');
+            const postsSection = document.getElementById('postsSection');
+            document.querySelectorAll('.sidebar-menu a').forEach(a => a.classList.remove('active'));
+
+            if (section === 'new') {
+                newPostSection.style.display = 'block';
+                postsSection.style.display = 'none';
+                document.getElementById('pageTitle').textContent = '✍️ Nuovo Articolo';
+            } else {
+                newPostSection.style.display = 'none';
+                postsSection.style.display = 'block';
+                document.getElementById('pageTitle').textContent = '📚 Articoli Pubblicati';
+            }
+
+            if (anchor) anchor.classList.add('active');
+        }
+
+        function logout() {
+            localStorage.removeItem('staffSession');
+            window.location.href = 'admin.html';
+        }
+
+        function escapeHtml(text) {
+            return String(text || '')
+                .replaceAll('&', '&amp;')
+                .replaceAll('<', '&lt;')
+                .replaceAll('>', '&gt;')
+                .replaceAll('"', '&quot;')
+                .replaceAll("'", '&#39;');
+        }
+
+        function readFormData() {
+            const title = document.getElementById('postTitle').value.trim();
+            const category = document.getElementById('postCategory').value.trim();
+            const imageUrl = document.getElementById('postImage').value.trim();
+            const image = uploadedImageDataUrl || imageUrl || 'download.webp';
+            const date = document.getElementById('postDate').value || new Date().toISOString().slice(0, 10);
+            const metaDesc = document.getElementById('postMetaDesc').value.trim() || title;
+            const keywords = document.getElementById('postKeywords').value.trim() || 'tecnologia, smartphone';
+            const intro = document.getElementById('postIntro').value.trim();
+            const content = document.getElementById('postContent').value.trim();
+
+            if (!title || !category || !intro || !content) {
+                return null;
+            }
+
+            const slug = title.toLowerCase()
+                .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+                .replace(/[^a-z0-9]+/g, '-')
+                .replace(/(^-|-$)/g, '');
+
+            return {
+                id: Date.now().toString(),
+                title,
+                category,
+                image,
+                date,
+                metaDesc,
+                keywords,
+                intro,
+                content,
+                slug,
+                fileName: `${slug}.html`,
+                createdAt: new Date().toISOString()
+            };
+        }
+
+        function handleImageFileChange(e) {
+            const file = e.target.files && e.target.files[0];
+            if (!file) {
+                uploadedImageDataUrl = '';
+                const preview = document.getElementById('postImagePreview');
+                if (preview) preview.style.display = 'none';
+                return;
+            }
+
+            if (!file.type.startsWith('image/')) {
+                showNotification('Seleziona un file immagine valido.', 'error');
+                e.target.value = '';
+                return;
+            }
+
+            const reader = new FileReader();
+            reader.onload = () => {
+                uploadedImageDataUrl = String(reader.result || '');
+                const previewWrap = document.getElementById('postImagePreview');
+                const previewImg = document.getElementById('postImagePreviewImg');
+                if (previewWrap && previewImg) {
+                    previewImg.src = uploadedImageDataUrl;
+                    previewWrap.style.display = 'block';
+                }
+            };
+            reader.onerror = () => showNotification('Errore durante il caricamento immagine.', 'error');
+            reader.readAsDataURL(file);
+        }
+
+        function refreshDashboard() {
+            const posts = getStaffPosts();
+            const now = new Date();
+            const thisMonth = posts.filter(p => {
+                const d = new Date(p.date);
+                return d.getMonth() === now.getMonth() && d.getFullYear() === now.getFullYear();
+            }).length;
+
+            document.getElementById('totalPosts').textContent = String(posts.length);
+            document.getElementById('thisMonthPosts').textContent = String(thisMonth);
+            document.getElementById('publishedPosts').textContent = String(posts.length);
+
+            loadPostsList();
+        }
+
+        function loadPostsList() {
+            const posts = getStaffPosts().sort((a, b) => new Date(b.date) - new Date(a.date));
+            const list = document.getElementById('postsList');
+
+            if (!posts.length) {
+                list.innerHTML = '<li class="post-item"><div class="post-info"><h4>Nessun articolo pubblicato dalla dashboard</h4><div class="meta">Usa il form per creare e pubblicare il primo articolo.</div></div></li>';
+                return;
+            }
+
+            list.innerHTML = posts.map(post => {
+                const formattedDate = new Date(post.date).toLocaleDateString('it-IT', { day: '2-digit', month: 'long', year: 'numeric' });
+                return `
+                    <li class="post-item">
+                        <div class="post-thumb">
+                            <img src="${escapeHtml(post.image)}" alt="${escapeHtml(post.title)}" loading="lazy">
+                        </div>
+                        <div class="post-info">
+                            <h4>${escapeHtml(post.title)}</h4>
+                            <div class="meta">${escapeHtml(post.category)} • ${formattedDate}</div>
+                            <small>File suggerito: ${escapeHtml(post.fileName)}</small>
+                        </div>
+                        <div class="post-actions">
+                            <button class="btn-icon delete" title="Elimina" onclick="deletePost('${post.id}')"><i class="fas fa-trash"></i></button>
+                        </div>
+                    </li>
+                `;
+            }).join('');
+        }
+
+        function deletePost(postId) {
+            const posts = getStaffPosts().filter(p => p.id !== postId);
+            saveStaffPosts(posts);
+
+            refreshDashboard();
+            showNotification('Articolo eliminato.', 'success');
+        }
+
+        document.getElementById('postForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const data = readFormData();
+            if (!data) {
+                showNotification('Compila tutti i campi obbligatori.', 'error');
+                return;
+            }
+
+            const preview = document.getElementById('previewContent');
+            preview.innerHTML = `
+                <h1>${escapeHtml(data.title)}</h1>
+                <p><strong>Categoria:</strong> ${escapeHtml(data.category)}</p>
+                <p><img src="${escapeHtml(data.image)}" alt="${escapeHtml(data.title)}" style="max-width:100%;border-radius:10px;margin:10px 0 14px;"></p>
+                <hr>
+                <p>${escapeHtml(data.intro)}</p>
+                <hr>
+                <div>${data.content}</div>
+            `;
+
+            document.getElementById('previewSection').style.display = 'block';
+            showNotification('Anteprima generata.', 'success');
+        });
+
+        function publishPost() {
+            const data = readFormData();
+            if (!data) {
+                showNotification('Compila tutti i campi obbligatori prima di pubblicare.', 'error');
+                return;
+            }
+
+            const posts = getStaffPosts();
+            posts.unshift(data);
+            saveStaffPosts(posts);
+
+            refreshDashboard();
+            showSection('posts', document.querySelector('.sidebar-menu a[href="#posts"]'));
+            showNotification('Articolo pubblicato sul sito (visibile in Home e Blog su questo browser).', 'success');
+        }
+
+        function buildArticleHtml(data) {
+            const formattedDate = new Date(data.date).toLocaleDateString('it-IT', { day: '2-digit', month: 'long', year: 'numeric' });
+            return `<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>${escapeHtml(data.title)} | DroidCore</title>
+<meta name="description" content="${escapeHtml(data.metaDesc)}">
+<meta name="keywords" content="${escapeHtml(data.keywords)}">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+<section class="article-section">
+  <div class="container">
+    <article class="article-content">
+      <div class="article-header">
+        <a href="blog.html" class="back-link"><i class="fas fa-arrow-left"></i> Torna al Blog</a>
+        <div class="article-badge">${escapeHtml(data.category)}</div>
+        <h1>${escapeHtml(data.title)}</h1>
+        <div class="article-meta">
+          <span><i class="fas fa-calendar"></i> ${formattedDate}</span>
+          <span><i class="fas fa-user"></i> DroidCore</span>
+        </div>
+      </div>
+      <img loading="lazy" src="${escapeHtml(data.image)}" alt="${escapeHtml(data.title)}" class="article-image-img">
+      <div class="article-body">
+        <p>${escapeHtml(data.intro)}</p>
+        ${data.content}
+      </div>
+    </article>
+  </div>
+</section>
+<script src="script.js" defer><\/script>
+</body>
+</html>`;
+        }
+
+        function generateAndDownload() {
+            const data = readFormData();
+            if (!data) {
+                showNotification('Compila tutti i campi obbligatori.', 'error');
+                return;
+            }
+
+            const html = buildArticleHtml(data);
+            const blob = new Blob([html], { type: 'text/html;charset=utf-8' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = data.fileName;
+            document.body.appendChild(a);
+            a.click();
+            a.remove();
+            URL.revokeObjectURL(url);
+
+            showNotification('File HTML generato e scaricato.', 'success');
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+

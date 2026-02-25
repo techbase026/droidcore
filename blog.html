@@ -1,20 +1,20 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="it">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Blog tecnologia - Leggi tutti gli articoli su Samsung Galaxy S26, One UI 8.5, privacy display, cybersecurity e AI. Guide complete e approfondimenti tech per 2026.">
-    <meta name="keywords" content="blog tecnologia, articoli tech, Samsung Galaxy S26, One UI 8.5, guide tecnologia, novità smartphone, AI, cybersecurity, tutorial">
-    <meta name="author" content="Tech Base">
+    <meta name="description" content="Blog tecnologia - Leggi tutti gli articoli su Samsung Galaxy S26, S25 FE, One UI 8.5, privacy display e AI. Guide complete e approfondimenti tech per 2026.">
+    <meta name="keywords" content="blog tecnologia, articoli tech, Samsung Galaxy S26, Samsung S25 FE, One UI 8.5, guide tecnologia, novità smartphone, AI, tutorial">
+    <meta name="author" content="DroidCore">
     <meta name="robots" content="index, follow">
     <meta property="og:title" content="Blog Tecnologia - Articoli Tech Esclusivi 2026">
     <meta property="og:description" content="Scopri i migliori articoli su tecnologia, smartphone e innovazione. Guide e tutorial su Samsung S26, One UI e molto altro.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.techbase.it/blog.html">
+    <meta property="og:url" content="https://www.DroidCore.it/blog.html">
     <title>Blog Tecnologia - Articoli su Samsung S26, One UI 8.5 e Novità Tech 2026</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="canonical" href="https://www.techbase.it/blog.html">
+    <link rel="canonical" href="https://www.DroidCore.it/blog.html">
 </head>
 <body>
     <!-- Animated Background -->
@@ -30,7 +30,7 @@
             <div class="logo">
                 <div class="logo-icon">⚡</div>
                 <div>
-                    <h1>Tech Base</h1>
+                    <h1>DroidCore</h1>
                     <p class="tagline">Innovazione & Tecnologia</p>
                 </div>
             </div>
@@ -38,11 +38,12 @@
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="blog.html" class="active">Blog</a></li>
-                    <li><a href="index.html#about">Chi Siamo</a></li>
-                    <li><a href="contatti.html">Contatti</a></li>
+                    <li><a href="comparatore.html">Comparatore AI</a></li>
+                    <li><a href="chi-siamo.html">Chi Siamo</a></li>
+                    <li><a href="canale.html">Canale</a></li>
                 </ul>
             </nav>
-            <button class="search-toggle" id="searchToggle" title="Cerca articoli">
+            <div class="header-actions">`r`n            <button class="search-toggle" id="searchToggle" title="Cerca articoli">
                 <i class="fas fa-search"></i>
             </button>
             <div class="hamburger">
@@ -96,14 +97,44 @@
         </div>
     </section>
 
+    <section class="blog-editorial-strip">
+        <div class="container">
+            <div class="editorial-strip-grid">
+                <article class="editorial-pill">
+                    <h3>Scelta del Mese</h3>
+                    <p>Confronto tra i migliori smartphone per fascia di prezzo.</p>
+                </article>
+                <article class="editorial-pill">
+                    <h3>Nuove Uscite</h3>
+                    <p>Rumor affidabili e date chiave dei prossimi lanci tech.</p>
+                </article>
+                <article class="editorial-pill">
+                    <h3>Q&A Community</h3>
+                    <p>Domande vere dal canale con risposte pratiche e veloci.</p>
+                </article>
+            </div>
+        </div>
+    </section>
     <!-- Blog Posts Section -->
     <section class="blog blog-page">
         <div class="container">
             <div class="blog-grid" id="blogGrid">
                 <!-- Post 1 -->
+                 <article class="blog-post">
+                    <div class="post-badge">📱 Smartphone</div>
+                    <img loading="lazy" src="download.webp" alt="Samsung Galaxy S25 FE" class="post-image-img">
+                    <div class="post-content">
+                        <h3>Samsung Galaxy S25 FE: Specifiche, Prezzo e Perché Potrebbe Essere il Best Buy Samsung</h3>
+                        <p class="post-date"><i class="fas fa-calendar"></i> 18/02/2026</p>
+                        <p>Analisi completa del Galaxy S25 FE: design, display, autonomia, prestazioni e prezzo atteso. Un modello pensato per chi vuole un'esperienza premium Samsung senza spendere quanto un top di gamma Ultra.</p>
+                        <a href="post5-samsung-s25-fe.html" class="read-more"><span>Leggi Articolo</span><i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <!-- Post 2 -->
                 <article class="blog-post">
                     <div class="post-badge">📱 Smartphone</div>
-                    <img src="Samsung-Galaxy-S26-Ultra.webp" alt="Samsung Galaxy S26" class="post-image-img">
+                    <img loading="lazy" src="Samsung-Galaxy-S26-Ultra.webp" alt="Samsung Galaxy S26" class="post-image-img">
                     <div class="post-content">
                         <h3>Samsung Galaxy S26 2026: Rivoluzione Tecnologica e Specifiche Complete</h3>
                         <p class="post-date"><i class="fas fa-calendar"></i> 28 Gennaio 2026</p>
@@ -112,10 +143,10 @@
                     </div>
                 </article>
 
-                <!-- Post 2 -->
+                <!-- Post 3 -->
                 <article class="blog-post">
                     <div class="post-badge">🔒 Privacy</div>
-                    <img src="S26-Ultra-Display.jpg" alt="Samsung Galaxy S26 Ultra Display Privacy" class="post-image-img">
+                    <img loading="lazy" src="S26-Ultra-Display.jpg" alt="Samsung Galaxy S26 Ultra Display Privacy" class="post-image-img">
                     <div class="post-content">
                         <h3>Samsung Privacy Display: Tecnologia Privacy Avanzata per Galaxy S26</h3>
                         <p class="post-date"><i class="fas fa-calendar"></i> 27 Gennaio 2026</p>
@@ -124,39 +155,27 @@
                     </div>
                 </article>
 
-                <!-- Post 3 -->
+                <!-- Post 4 -->
                 <article class="blog-post">
                     <div class="post-badge">📱 Software</div>
-                    <img src="1293707.webp" alt="Samsung One UI 8.5" class="post-image-img">
+                    <img loading="lazy" src="1293707.webp" alt="Samsung One UI 8.5" class="post-image-img">
                     <div class="post-content">
                         <h3>Samsung One UI 8.5 2026: Novità, Features AI e Compatibilità Completa</h3>
                         <p class="post-date"><i class="fas fa-calendar"></i> 26 Gennaio 2026</p>
-                        <p>Scopri One UI 8.5, l'evoluzione dell'interfaccia Samsung 2026 con intelligenza artificiale generativa avanzata, nuove funzionalità Galaxy AI esclusive, performance ottimizzate, batteria migliorata, animazioni fluide e integrazione totale con i Galaxy S26. La rivoluzione dell'esperienza utente Samsung con machine learning, gestri AI intelligenti e personalizzazione avanzata del telefono.</p>
+                        <p>Scopri One UI 8.5, l'evoluzione dell'interfaccia Samsung 2026 con intelligenza artificiale generativa avanzata, nuove funzionalità Galaxy AI esclusive, performance ottimizzate, batteria migliorata, animazioni fluide e integrazione totale con i Galaxy S26. La rivoluzione dell'esperienza utente Samsung con machine learning, gesti AI intelligenti e personalizzazione avanzata del telefono.</p>
                         <a href="post3-samsung-oneui8.html" class="read-more"><span>Leggi Articolo</span><i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </article>
-
-                <!-- Post 4 -->
-                <article class="blog-post">
-                    <div class="post-badge">✅ Compatibilità</div>
-                    <img src="download.webp" alt="Samsung One UI 8.5" class="post-image-img">
-                    <div class="post-content">
-                        <h3>Quali Telefoni Samsung Riceveranno One UI 8.5: Elenco Completo e Tempistiche</h3>
-                        <p class="post-date"><i class="fas fa-calendar"></i> 25 Gennaio 2026</p>
-                        <p>Scopri la lista completa dei telefoni Samsung compatibili con l'aggiornamento a One UI 8.5 2026: Galaxy S26, S25, S24, A serie, Z Fold, Z Flip e tablet. Leggi i tempi di rollout per ogni modello, le nuove funzionalità esclusive per ogni serie, le date ufficiali di distribuzione, requisiti minimi di memoria e compatibilità con vecchi dispositivi Samsung.</p>
-                        <a href="post4-oneui85-compatibility.html" class="read-more"><span>Leggi Articolo</span><i class="fas fa-arrow-right"></i></a>
                     </div>
                 </article>
 
                 <!-- Post 5 -->
                 <article class="blog-post">
-                    <div class="post-badge">🔐 Security</div>
-                    <div class="post-image" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);"></div>
+                    <div class="post-badge">✅ Compatibilità</div>
+                    <img loading="lazy" src="download.webp" alt="Samsung One UI 8.5" class="post-image-img">
                     <div class="post-content">
-                        <h3>Cybersecurity 2026: Guide Pratiche per Proteggere i Tuoi Dati Online</h3>
-                        <p class="post-date"><i class="fas fa-calendar"></i> 18 Gennaio 2026</p>
-                        <p>Scopri le migliori pratiche di cybersecurity per proteggere la tua privacy e i tuoi dati online. Guida completa alle misure di sicurezza essenziali per ogni utente, dalle password sicure alla protezione da phishing.</p>
-                        <a href="#" class="read-more"><span>Leggi Articolo</span><i class="fas fa-arrow-right"></i></a>
+                        <h3>Quali Telefoni Samsung Riceveranno One UI 8.5: Elenco Completo e Tempistiche</h3>
+                        <p class="post-date"><i class="fas fa-calendar"></i> 25 Gennaio 2026</p>
+                        <p>Scopri la lista completa dei telefoni Samsung compatibili con l'aggiornamento a One UI 8.5 2026: Galaxy S26, S25, S24, A serie, Z Fold, Z Flip e tablet. Leggi i tempi di rollout per ogni modello, le nuove funzionalità esclusive per ogni serie, le date ufficiali di distribuzione, requisiti minimi di memoria e compatibilità con vecchi dispositivi Samsung.</p>
+                        <a href="post4-oneui85-compatibility.html" class="read-more"><span>Leggi Articolo</span><i class="fas fa-arrow-right"></i></a>
                     </div>
                 </article>
 
@@ -168,19 +187,30 @@
                         <h3>AI e Machine Learning 2026: Il Futuro della Tecnologia Artificiale</h3>
                         <p class="post-date"><i class="fas fa-calendar"></i> 15 Gennaio 2026</p>
                         <p>Esplora il mondo dell'intelligenza artificiale e del machine learning con esempi pratici. Scopri come l'IA sta trasformando il nostro futuro, dalle applicazioni quotidiane ai progetti di ricerca avanzati.</p>
-                        <a href="#" class="read-more"><span>Leggi Articolo</span><i class="fas fa-arrow-right"></i></a>
+                        <a href="canale.html" class="read-more"><span>Partecipa al Q&A</span><i class="fas fa-arrow-right"></i></a>
                     </div>
                 </article>
             </div>
         </div>
     </section>
-
+    <section class="blog-channel-banner">
+        <div class="container">
+            <div class="blog-channel-card">
+                <div>
+                    <p class="blog-channel-kicker">Creator Hub</p>
+                    <h2>Il blog ufficiale del canale YouTube DroidCore</h2>
+                    <p>Qui trovi la versione estesa dei video: schede tecniche, link utili, confronto modelli e checklist scaricabili.</p>
+                </div>
+                <a href="canale.html" class="cta-btn primary-btn"><span>Entra nel Canale</span><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </section>
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h4>Tech Base</h4>
+                    <h4>DroidCore</h4>
                     <p>Il tuo hub di risorse per la tecnologia</p>
                 </div>
                 <div class="footer-section">
@@ -188,26 +218,37 @@
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="blog.html">Blog</a></li>
-                        <li><a href="index.html#about">Chi Siamo</a></li>
-                        <li><a href="contatti.html">Contatti</a></li>
-                    </ul>
+                        <li><a href="comparatore.html">Comparatore AI</a></li>
+                        <li><a href="chi-siamo.html">Chi Siamo</a></li>
+                        <li><a href="canale.html">Canale</a></li>
+                </ul>
                 </div>
                 <div class="footer-section">
                     <h4>Seguici</h4>
                     <div class="social-links">
-                        <a href="https://youtube.com" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
-                        <a href="https://twitter.com" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="https://instagram.com" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="https://github.com" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://www.youtube.com/@droidcore-e4b" target="_blank" rel="noopener noreferrer" title="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://github.com" target="_blank" rel="noopener noreferrer" title="GitHub"><i class="fab fa-github"></i></a>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 Tech Base. Tutti i diritti riservati. | Creato con ❤️ per gli amanti della tecnologia</p>
+                <p>&copy; 2026 DroidCore. Tutti i diritti riservati. | Creato con ❤️ per gli amanti della tecnologia</p>
             </div>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
